@@ -1,0 +1,59 @@
+{% extends "meseros/base_generic.html" %}
+
+{% block content %}
+{#    <div xmlns=""><a href="http://unmsm.edu.pe/"><strong>U.N.M.S.M</strong></a></div>#}
+    <p class="bg-success">Lista de meseros en la aplicacion</p>
+{#    <p> <strong> nombre de owner:</strong>{{ data.nombre }}</p>#}
+{#    {% if data.nombre %}#}
+{#        <p> <strong> nombre de owner:</strong>{{ data.nombre }}</p>#}
+{#    {% else %}#}
+{#        <p> <strong> nombre de owner:</strong>Sin nombre</p>#}
+{#    {% endif %}#}
+{##}
+{##}
+{#    <p><strong>edad de owner:</strong>{{ data.edad }}</p>#}
+{#    <p><strong>Pais:</strong>{{ data.pais }}</p>#}
+{#    <p><strong>DNI:</strong>{{ data.dni}}</p>#}
+{##}
+{#    {% if data.dni %}#}
+{#        {% if not data.vigente %}#}
+{#        <h4> ¡ Su dato no esta  vigente!</h4>#}
+{#        {% endif %}#}
+{#    {% endif %}#}
+    <div class="card-body">
+        <form action="" method="post"></form>
+        <table class="table table-striped">
+            <thead>
+                <th scope="col">#</th>
+                <th scope="col">Descripción</th>
+            </thead>
+             <tbody>
+                {% for meseros in data %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td><p>{{ meseros.nombre }} es de {{ meseros.nacionalidad }} que tiene {{ meseros.edad }} años</p></td>
+                    </tr>
+                {% endfor %}
+             </tbody>
+        </table>
+    </div>
+{#        <h2>Aplicando filtros</h2>#}
+
+{#            {% for meseros in data %}#}
+{#                <li>#}
+{#                    <p> <strong> nombre de mesero:</strong>{{ meseros.nombre|lower}}</p>#}
+{#             </li>#}
+{#           {% endfor %}#}
+
+
+{#            </ul>#}
+{#        <h5>La cantidad de owner actualmente es de :{{ data|length}}</h5>#}
+{#         <h3>uso de cut</h3>#}
+{#             <ul>#}
+{#            {% for owner in data %}#}
+{#                <li>#}
+{#                    <p> <strong> nombre de owner:</strong>{{ owner.nombre|cut:"a"}}</p>#}
+{#             </li>#}
+{#            {% endfor %}#}
+{#            </ul>#}
+{% endblock %}

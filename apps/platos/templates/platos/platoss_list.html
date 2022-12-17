@@ -1,0 +1,41 @@
+{% extends "platos/base_generic.html" %}
+
+{% block content %}
+{#    <div xmlns=""><a href="http://unmsm.edu.pe/"><strong>U.N.M.S.M</strong></a></div>#}
+    <p class="bg-success">Lista de platillos en la aplicacion</p>
+{#    <p> <strong> nombre de owner:</strong>{{ data.nombre }}</p>#}
+{#    {% if data.nombre %}#}
+{#        <p> <strong> nombre de owner:</strong>{{ data.nombre }}</p>#}
+{#    {% else %}#}
+{#        <p> <strong> nombre de owner:</strong>Sin nombre</p>#}
+{#    {% endif %}#}
+{##}
+{##}
+{#    <p><strong>edad de owner:</strong>{{ data.edad }}</p>#}
+{#    <p><strong>Pais:</strong>{{ data.pais }}</p>#}
+{#    <p><strong>DNI:</strong>{{ data.dni}}</p>#}
+{##}
+{#    {% if data.dni %}#}
+{#        {% if not data.vigente %}#}
+{#        <h4> ¡ Su dato no esta  vigente!</h4>#}
+{#        {% endif %}#}
+{#    {% endif %}#}
+        <div class="card-body">
+        <form action="" method="post"></form>
+        <table class="table table-striped">
+            <thead>
+                <th scope="col">#</th>
+                <th scope="col">Descripción</th>
+            </thead>
+             <tbody>
+                {% for platos in data %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td><p>{{ platos.nombre_plato }} es de {{ platos.procedencia }} que cuesta {{ platos.precio }} soles</p></td>
+                    </tr>
+                {% endfor %}
+             </tbody>
+        </table>
+    </div>
+
+{% endblock %}
